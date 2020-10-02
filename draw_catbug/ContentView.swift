@@ -12,9 +12,7 @@ struct ContentView: View {
         ZStack {
             Text("this is Catbug!")
                 .padding()
-            CatBug().position(x: 200, y: 400)
-            //RightHand_View()
-            //RightHand_Line()
+            CatBug()
         }
     }
 }
@@ -34,7 +32,7 @@ struct CatBug: View {
             catbug_body()
             catbug_hand_B()
             catbug_ear_B()
-        }
+        }.position(x: 200, y: 400)
     }
 }
 struct catbug_ear_A:View {
@@ -55,12 +53,12 @@ struct catbug_ear_B:View {
     var body: some View {
         ZStack{
             Path{(path)in
-                path.move(to: CGPoint(x: 24, y: 57))
-                path.addQuadCurve(to: CGPoint(x:53,y:38), control: CGPoint(x:30 ,y:-10))
+                path.move(to: CGPoint(x: 112, y: 41))
+                path.addQuadCurve(to: CGPoint(x:146,y:55), control: CGPoint(x:144 ,y:-20))
             }.fill(Color(red: 183/255, green: 223/255, blue: 250/255))
             Path{(path)in
-                path.move(to: CGPoint(x: 24, y: 57))
-                path.addQuadCurve(to: CGPoint(x:53,y:38), control: CGPoint(x:30 ,y:-10))
+                path.move(to: CGPoint(x: 112, y: 41))
+                path.addQuadCurve(to: CGPoint(x:146,y:55), control: CGPoint(x:144 ,y:-20))
             }.stroke(lineWidth: 2)
         }
     }
@@ -111,12 +109,12 @@ struct catbug_leg_B:View {
     var body: some View {
         ZStack{
             Path{(path)in
-                path.move(to: CGPoint(x: 112, y: 41))
-                path.addQuadCurve(to: CGPoint(x:146,y:55), control: CGPoint(x:144 ,y:-20))
+                path.move(to: CGPoint(x: 116, y: 263))
+                path.addQuadCurve(to: CGPoint(x:140,y:262), control: CGPoint(x:127 ,y:335))
             }.fill(Color(red: 183/255, green: 223/255, blue: 250/255))
             Path{(path)in
-                path.move(to: CGPoint(x: 112, y: 41))
-                path.addQuadCurve(to: CGPoint(x:146,y:55), control: CGPoint(x:144 ,y:-20))
+                path.move(to: CGPoint(x: 116, y: 263))
+                path.addQuadCurve(to: CGPoint(x:140,y:262), control: CGPoint(x:127 ,y:335))
             }.stroke(lineWidth: 2)
         }
     }
