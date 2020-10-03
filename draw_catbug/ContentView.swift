@@ -12,7 +12,7 @@ struct ContentView: View {
         ZStack {
             Text("this is Catbug!")
                 .padding()
-            CatBug()
+            CatBug().position(x: 200, y: 400)
         }
     }
 }
@@ -33,7 +33,7 @@ struct CatBug: View {
             catbug_ear_B()
             catbug_face()
             catbug_back()
-        }.position(x: 200, y: 400)
+        }
     }
 }
 struct catbug_face:View {
@@ -199,6 +199,12 @@ struct catbug_back:View {
                 path.addQuadCurve(to: CGPoint(x:230,y:175), control: CGPoint(x:208 ,y:150))
                 path.addQuadCurve(to: CGPoint(x:215,y:120), control: CGPoint(x:232 ,y:150))
             }.fill(Color(red: 43/255, green: 50/255, blue: 108/255))
+            Ellipse()
+                .fill(Color(red: 43/255, green: 50/255, blue: 108/255))
+                .frame(width: 35, height: 56)
+                .position(x: 174, y: 208)
+                .rotationEffect(.degrees(15))
+                
             Path{(path)in
                 path.move(to: CGPoint(x:173,y:114))
                 path.addQuadCurve(to: CGPoint(x:200,y:123), control: CGPoint(x:189 ,y:105))
@@ -211,7 +217,11 @@ struct catbug_back:View {
                 path.addQuadCurve(to: CGPoint(x:230,y:175), control: CGPoint(x:208 ,y:150))
                 path.addQuadCurve(to: CGPoint(x:215,y:120), control: CGPoint(x:232 ,y:150))
             }.stroke(lineWidth: 2.5)
-            
+            Ellipse()
+                .stroke(lineWidth: 2.5)
+                .frame(width: 35, height: 56)
+                .position(x: 174, y: 208)
+                .rotationEffect(.degrees(15))
         }
     }
 }
