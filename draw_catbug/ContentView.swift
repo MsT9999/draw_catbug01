@@ -13,10 +13,6 @@ struct ContentView: View {
             Text("this is Catbug!")
                 .padding()
             CatBug_View().position(x: 200, y: 350)
-            
-            bowl_View().rotationEffect(.degrees(-30))
-            
-            
         }
     }
 }
@@ -35,6 +31,9 @@ struct CatBug_View: View {
             catbug_hand_B()
             catbug_face()
             catbug_back_dot()
+            bowl_View()
+                .rotationEffect(.degrees(-30))
+                .offset(x: -75, y: -210)
         }
     }
 }
