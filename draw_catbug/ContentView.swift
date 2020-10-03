@@ -10,9 +10,22 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         ZStack {
-            Text("this is Catbug!")
-                .padding()
-            CatBug_View().position(x: 200, y: 350)
+            Image("catbug_cute")
+                .resizable()
+                .scaledToFill()
+                .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .edgesIgnoringSafeArea(.all)
+            CatBug_View().position(x: 200, y: 400)
+            VStack{
+                Text("CATBUG!")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.blue)
+                Text("Bravest Warriors")
+                    .font(.caption)
+                    .fontWeight(.light)
+                    .foregroundColor(Color.black)
+            }.position(x: 150, y: 75)
         }
     }
 }
