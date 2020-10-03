@@ -12,7 +12,40 @@ struct ContentView: View {
         ZStack {
             Text("this is Catbug!")
                 .padding()
-            CatBug().position(x: 200, y: 400)
+            CatBug_View().position(x: 200, y: 350)
+            Group {
+                Leaf_Green_View()
+                    .offset(x: 0.0, y: 0.5)
+                    .rotationEffect(.degrees(152))
+                Leaf_DarkGreen_View()
+                    .offset(x: 5.0, y: /*@START_MENU_TOKEN@*/10.0/*@END_MENU_TOKEN@*/)
+                    .rotationEffect(.degrees(-90))
+                Leaf_DarkGreen_View()
+                    .offset(x: 26.0, y: 5.0)
+                    .rotationEffect(.degrees(9))
+                Leaf_DarkGreen_View()
+                    .offset(x: 12.0, y: 12.0)
+                    .rotationEffect(.degrees(-79))
+                Leaf_Green_View()
+                    .offset(x: 33.0, y: 5.0)
+                    .rotationEffect(.degrees(-33))
+                Leaf_DarkGreen_View()
+                    .offset(x: 19.0, y:15.0)
+                    .rotationEffect(.degrees(100))
+                Leaf_Green_View()
+                    .offset(x: 20.0, y: /*@START_MENU_TOKEN@*/10.0/*@END_MENU_TOKEN@*/)
+                    .rotationEffect(.degrees(10))
+                Leaf_Green_View()
+                    .offset(x: -5.0, y: 20.0)
+                    .rotationEffect(.degrees(-40))
+                Leaf_DarkGreen_View()
+                    .offset(x: -40.0, y:-30.0)
+                    .rotationEffect(.degrees(-60))
+                Leaf_Green_View()
+                    .offset(x: -20.0, y: 5.0)
+                    .rotationEffect(.degrees(-22))
+            }.offset(x: 0, y: 180)
+            
         }
     }
 }
@@ -22,7 +55,7 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-struct CatBug: View {
+struct CatBug_View: View {
     var body: some View {
         ZStack {
             catbug_hand_A()
@@ -90,13 +123,6 @@ struct catbug_face:View {
         }
     }
 }
-struct catbug_ear_A:View {
-    var body: some View {
-        ZStack{
-           
-        }
-    }
-}
 struct catbug_hand_A:View {
     var body: some View {
         ZStack{
@@ -150,62 +176,69 @@ struct catbug_leg:View {
 struct catbug_body:View {
     var body: some View {
         ZStack{
-            //ear_right
-            Path{(path)in
-                path.move(to: CGPoint(x: 24, y: 57))
-                path.addQuadCurve(to: CGPoint(x:53,y:38), control: CGPoint(x:30 ,y:-10))
-            }.fill(Color(red: 171/255, green: 206/255, blue: 237/255))
-            Path{(path)in
-                path.move(to: CGPoint(x: 24, y: 57))
-                path.addQuadCurve(to: CGPoint(x:53,y:38), control: CGPoint(x:30 ,y:-10))
-            }.stroke(lineWidth: 2.5)
-            //body
-            Path{(path)in
-                path.move(to: CGPoint(x: 33, y: 146))
-                path.addQuadCurve(to: CGPoint(x:7,y:93), control: CGPoint(x:5 ,y:125))
-                path.addQuadCurve(to: CGPoint(x:85,y:34), control: CGPoint(x:19 ,y:34))
-                path.addQuadCurve(to: CGPoint(x:171,y:103), control: CGPoint(x:160 ,y:34))
-                path.addQuadCurve(to: CGPoint(x:161,y:165), control: CGPoint(x:175 ,y:135))
-                path.addQuadCurve(to: CGPoint(x:167,y:265), control: CGPoint(x:135 ,y:221))
-                path.addQuadCurve(to: CGPoint(x:60,y:266), control: CGPoint(x:111 ,y:295))
-                path.addQuadCurve(to: CGPoint(x:33,y:146), control: CGPoint(x:1 ,y:226))
-            }.fill(Color(red: 171/255, green: 206/255, blue: 237/255))
-            Path{(path)in
-                path.move(to: CGPoint(x: 33, y: 146))
-                path.addQuadCurve(to: CGPoint(x:7,y:93), control: CGPoint(x:5 ,y:125))
-                path.addQuadCurve(to: CGPoint(x:85,y:34), control: CGPoint(x:19 ,y:34))
-                path.addQuadCurve(to: CGPoint(x:171,y:103), control: CGPoint(x:160 ,y:34))
-                path.addQuadCurve(to: CGPoint(x:161,y:165), control: CGPoint(x:175 ,y:135))
-                path.addQuadCurve(to: CGPoint(x:167,y:265), control: CGPoint(x:135 ,y:221))
-                path.addQuadCurve(to: CGPoint(x:60,y:266), control: CGPoint(x:111 ,y:295))
-                path.addQuadCurve(to: CGPoint(x:33,y:146), control: CGPoint(x:1 ,y:226))
-            }.stroke(lineWidth: 2.5)
-            //ear_left
-            Path{(path)in
-                path.move(to: CGPoint(x: 112, y: 41))
-                path.addQuadCurve(to: CGPoint(x:146,y:55), control: CGPoint(x:144 ,y:-20))
-            }.fill(Color(red: 171/255, green: 206/255, blue: 237/255))
-            Path{(path)in
-                path.move(to: CGPoint(x: 112, y: 41))
-                path.addQuadCurve(to: CGPoint(x:146,y:55), control: CGPoint(x:144 ,y:-20))
-            }.stroke(lineWidth: 2.5)
-            //back
-            Path{(path)in
-                path.move(to: CGPoint(x:171,y:103))
-                path.addQuadCurve(to: CGPoint(x:161,y:165), control: CGPoint(x:175 ,y:135))
-                path.addQuadCurve(to: CGPoint(x:167,y:265), control: CGPoint(x:135 ,y:221))
-                path.addArc(center: CGPoint(x:130,y:172), radius: 100,
-                startAngle: .degrees(70), endAngle: .degrees(290), clockwise: true)
-                path.closeSubpath()
-            }.fill(Color(red: 210/255, green: 31/255, blue: 58/255))
-            Path{(path)in
-                path.move(to: CGPoint(x:171,y:103))
-                path.addQuadCurve(to: CGPoint(x:161,y:165), control: CGPoint(x:175 ,y:135))
-                path.addQuadCurve(to: CGPoint(x:167,y:265), control: CGPoint(x:135 ,y:221))
-                path.addArc(center: CGPoint(x:130,y:172), radius: 100,
-                startAngle: .degrees(70), endAngle: .degrees(290), clockwise: true)
-                path.closeSubpath()
-            }.stroke(lineWidth: 2.5)
+            
+            Group { //ear_right
+                Path{(path)in
+                    path.move(to: CGPoint(x: 24, y: 57))
+                    path.addQuadCurve(to: CGPoint(x:53,y:38), control: CGPoint(x:30 ,y:-10))
+                }.fill(Color(red: 171/255, green: 206/255, blue: 237/255))
+                Path{(path)in
+                    path.move(to: CGPoint(x: 24, y: 57))
+                    path.addQuadCurve(to: CGPoint(x:53,y:38), control: CGPoint(x:30 ,y:-10))
+                }.stroke(lineWidth: 2.5)
+            }
+            
+            Group { //body
+                Path{(path)in
+                    path.move(to: CGPoint(x: 33, y: 146))
+                    path.addQuadCurve(to: CGPoint(x:7,y:93), control: CGPoint(x:5 ,y:125))
+                    path.addQuadCurve(to: CGPoint(x:85,y:34), control: CGPoint(x:19 ,y:34))
+                    path.addQuadCurve(to: CGPoint(x:171,y:103), control: CGPoint(x:160 ,y:34))
+                    path.addQuadCurve(to: CGPoint(x:161,y:165), control: CGPoint(x:175 ,y:135))
+                    path.addQuadCurve(to: CGPoint(x:167,y:265), control: CGPoint(x:135 ,y:221))
+                    path.addQuadCurve(to: CGPoint(x:60,y:266), control: CGPoint(x:111 ,y:295))
+                    path.addQuadCurve(to: CGPoint(x:33,y:146), control: CGPoint(x:1 ,y:226))
+                }.fill(Color(red: 171/255, green: 206/255, blue: 237/255))
+                Path{(path)in
+                    path.move(to: CGPoint(x: 33, y: 146))
+                    path.addQuadCurve(to: CGPoint(x:7,y:93), control: CGPoint(x:5 ,y:125))
+                    path.addQuadCurve(to: CGPoint(x:85,y:34), control: CGPoint(x:19 ,y:34))
+                    path.addQuadCurve(to: CGPoint(x:171,y:103), control: CGPoint(x:160 ,y:34))
+                    path.addQuadCurve(to: CGPoint(x:161,y:165), control: CGPoint(x:175 ,y:135))
+                    path.addQuadCurve(to: CGPoint(x:167,y:265), control: CGPoint(x:135 ,y:221))
+                    path.addQuadCurve(to: CGPoint(x:60,y:266), control: CGPoint(x:111 ,y:295))
+                    path.addQuadCurve(to: CGPoint(x:33,y:146), control: CGPoint(x:1 ,y:226))
+                }.stroke(lineWidth: 2.5)
+            }
+            Group { //ear_left
+                Path{(path)in
+                    path.move(to: CGPoint(x: 112, y: 41))
+                    path.addQuadCurve(to: CGPoint(x:146,y:55), control: CGPoint(x:144 ,y:-20))
+                }.fill(Color(red: 171/255, green: 206/255, blue: 237/255))
+                Path{(path)in
+                    path.move(to: CGPoint(x: 112, y: 41))
+                    path.addQuadCurve(to: CGPoint(x:146,y:55), control: CGPoint(x:144 ,y:-20))
+                }.stroke(lineWidth: 2.5)
+            }
+            Group { //back
+                Path{(path)in
+                    path.move(to: CGPoint(x:171,y:103))
+                    path.addQuadCurve(to: CGPoint(x:161,y:165), control: CGPoint(x:175 ,y:135))
+                    path.addQuadCurve(to: CGPoint(x:167,y:265), control: CGPoint(x:135 ,y:221))
+                    path.addArc(center: CGPoint(x:130,y:172), radius: 100,
+                                startAngle: .degrees(70), endAngle: .degrees(290), clockwise: true)
+                    path.closeSubpath()
+                }.fill(Color(red: 210/255, green: 31/255, blue: 58/255))
+                Path{(path)in
+                    path.move(to: CGPoint(x:171,y:103))
+                    path.addQuadCurve(to: CGPoint(x:161,y:165), control: CGPoint(x:175 ,y:135))
+                    path.addQuadCurve(to: CGPoint(x:167,y:265), control: CGPoint(x:135 ,y:221))
+                    path.addArc(center: CGPoint(x:130,y:172), radius: 100,
+                                startAngle: .degrees(70), endAngle: .degrees(290), clockwise: true)
+                    path.closeSubpath()
+                }.stroke(lineWidth: 2.5)
+            }
+            
         }
     }
 }
@@ -229,7 +262,7 @@ struct catbug_back_dot:View {
                 .frame(width: 35, height: 56)
                 .position(x: 174, y: 208)
                 .rotationEffect(.degrees(15))
-                
+            
             Path{(path)in
                 path.move(to: CGPoint(x:173,y:114))
                 path.addQuadCurve(to: CGPoint(x:200,y:123), control: CGPoint(x:189 ,y:105))
@@ -250,18 +283,29 @@ struct catbug_back_dot:View {
         }
     }
 }
-struct Right_Hand:Shape{
-    func path(in rect: CGRect)-> Path{
-        Path{(path)in
-            path.move(to: CGPoint(x:0,y:rect.height*10/90))
-            path.addLine(to: CGPoint(x:0,y:rect.height*30/90))
-            path.addQuadCurve(to: CGPoint(x:rect.width*40/55*(-1),y:rect.height*85/90), control: CGPoint(x: rect.width*18/55*(-1),y:rect.height*58/90))
-            path.addQuadCurve(to: CGPoint(x:rect.width*55/55*(-1),y:rect.height*90/90), control: CGPoint(x:rect.width*40/55*(-1),y:rect.height*87/90))
-            path.addQuadCurve(to: CGPoint(x:rect.width*55/55*(-1),y:rect.height*80/90), control: CGPoint(x:rect.width*75/55*(-1),y:rect.height*87/90))
-            path.addQuadCurve(to: CGPoint(x:rect.width*48/55*(-1),y:75), control: CGPoint(x:rect.width*52/55*(-1),y:rect.height*80/90))
-            path.addQuadCurve(to: CGPoint(x:0,y:rect.height*10/90), control: CGPoint(x:rect.width*45/55*(-1),y:rect.height*78/90))
+struct Leaf: Shape {
+    func path(in rect: CGRect) -> Path {
+        Path { (path) in
+            path.move(to: CGPoint(x: rect.width, y: 0))
+            path.addQuadCurve(to: CGPoint(x: 0, y: rect.height),
+                              control: CGPoint(x: rect.width / 5, y: rect.height / 5))
+            path.addQuadCurve(to: CGPoint(x: rect.width, y: 0),
+                              control: CGPoint(x: rect.width * 17 / 20, y: rect.height * 13 / 15))
+            path.closeSubpath()
         }
-        
     }
 }
-
+struct Leaf_Green_View: View {
+    var body: some View {
+        Leaf()
+            .fill(Color.green)
+            .frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+    }
+}
+struct Leaf_DarkGreen_View: View {
+    var body: some View {
+        Leaf()
+            .fill(Color(red: 100/255, green: 155/255, blue: 100/255))
+            .frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+    }
+}
