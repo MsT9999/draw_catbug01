@@ -13,38 +13,9 @@ struct ContentView: View {
             Text("this is Catbug!")
                 .padding()
             CatBug_View().position(x: 200, y: 350)
-            Group {
-                Leaf_Green_View()
-                    .offset(x: 0.0, y: 0.5)
-                    .rotationEffect(.degrees(152))
-                Leaf_DarkGreen_View()
-                    .offset(x: 5.0, y: /*@START_MENU_TOKEN@*/10.0/*@END_MENU_TOKEN@*/)
-                    .rotationEffect(.degrees(-90))
-                Leaf_DarkGreen_View()
-                    .offset(x: 26.0, y: 5.0)
-                    .rotationEffect(.degrees(9))
-                Leaf_DarkGreen_View()
-                    .offset(x: 12.0, y: 12.0)
-                    .rotationEffect(.degrees(-79))
-                Leaf_Green_View()
-                    .offset(x: 33.0, y: 5.0)
-                    .rotationEffect(.degrees(-33))
-                Leaf_DarkGreen_View()
-                    .offset(x: 19.0, y:15.0)
-                    .rotationEffect(.degrees(100))
-                Leaf_Green_View()
-                    .offset(x: 20.0, y: /*@START_MENU_TOKEN@*/10.0/*@END_MENU_TOKEN@*/)
-                    .rotationEffect(.degrees(10))
-                Leaf_Green_View()
-                    .offset(x: -5.0, y: 20.0)
-                    .rotationEffect(.degrees(-40))
-                Leaf_DarkGreen_View()
-                    .offset(x: -40.0, y:-30.0)
-                    .rotationEffect(.degrees(-60))
-                Leaf_Green_View()
-                    .offset(x: -20.0, y: 5.0)
-                    .rotationEffect(.degrees(-22))
-            }.offset(x: 0, y: 180)
+            
+            bowl_View().rotationEffect(.degrees(-30))
+            
             
         }
     }
@@ -70,62 +41,65 @@ struct CatBug_View: View {
 struct catbug_face:View {
     var body: some View {
         ZStack{
-            Ellipse()
-                .fill(Color.white)
-                .frame(width: 10, height: 16, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                .position(x: 40, y: 85)
-            Ellipse()
-                .stroke(lineWidth: 2.5)
-                .frame(width: 10, height: 16, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                .position(x: 40, y: 85)
-            Ellipse()
-                .fill(Color.white)
-                .frame(width: 10, height: 16, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                .position(x: 115, y: 85)
-            Ellipse()
-                .stroke(lineWidth: 2.5)
-                .frame(width: 10, height: 16, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                .position(x: 115, y: 85)
-            //mouth
-            Path{(path)in
-                path.move(to: CGPoint(x: 67, y: 93))
-                path.addQuadCurve(to: CGPoint(x:83,y:93), control: CGPoint(x:75 ,y:121))
-                path.addLine(to:  CGPoint(x: 75, y: 89))
-                path.closeSubpath()
-            }.fill(Color(red: 170/255, green: 65/255, blue: 69/255))
-            Path{(path)in
-                path.move(to: CGPoint(x: 67, y: 93))
-                path.addQuadCurve(to: CGPoint(x:83,y:93), control: CGPoint(x:75 ,y:121))
-            }.stroke(lineWidth: 2.5)
-            Path{(path)in
-                path.move(to: CGPoint(x: 71, y: 103))
-                path.addQuadCurve(to: CGPoint(x:81,y:98), control: CGPoint(x:75 ,y:97))
-                path.addQuadCurve(to:  CGPoint(x: 75, y:106), control: CGPoint(x:78 ,y:105))
-                path.closeSubpath()
-            }.fill(Color(red: 239/255, green: 153/255, blue: 154/255))
-            Path{(path)in
-                path.move(to: CGPoint(x: 71, y: 103))
-                path.addQuadCurve(to: CGPoint(x:81,y:98), control: CGPoint(x:75 ,y:97))
-            }.stroke(lineWidth: 2)
-            //lip
-            Path{(path)in
-                path.move(to: CGPoint(x: 59, y: 89))
-                path.addQuadCurve(to: CGPoint(x:75,y:89), control: CGPoint(x:67 ,y:99))
-                path.addQuadCurve(to: CGPoint(x:91,y:89), control: CGPoint(x:84 ,y:99))
-                path.closeSubpath()
-            }.fill(Color(red: 171/255, green: 206/255, blue: 237/255))
-            Path{(path)in
-                path.move(to: CGPoint(x: 59, y: 89))
-                path.addQuadCurve(to: CGPoint(x:75,y:89), control: CGPoint(x:67 ,y:99))
-                path.addQuadCurve(to: CGPoint(x:91,y:89), control: CGPoint(x:84 ,y:99))
-                
-            }.stroke(lineWidth: 2.5)
+            Group {
+                Ellipse()
+                    .fill(Color.white)
+                    .frame(width: 10, height: 16, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .position(x: 40, y: 85)
+                Ellipse()
+                    .stroke(lineWidth: 2.5)
+                    .frame(width: 10, height: 16, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .position(x: 40, y: 85)
+                Ellipse()
+                    .fill(Color.white)
+                    .frame(width: 10, height: 16, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .position(x: 115, y: 85)
+                Ellipse()
+                    .stroke(lineWidth: 2.5)
+                    .frame(width: 10, height: 16, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .position(x: 115, y: 85)
+            }
+            Group { //mouth
+                Path{(path)in
+                    path.move(to: CGPoint(x: 67, y: 93))
+                    path.addQuadCurve(to: CGPoint(x:83,y:93), control: CGPoint(x:75 ,y:121))
+                    path.addLine(to:  CGPoint(x: 75, y: 89))
+                    path.closeSubpath()
+                }.fill(Color(red: 170/255, green: 65/255, blue: 69/255))
+                Path{(path)in
+                    path.move(to: CGPoint(x: 67, y: 93))
+                    path.addQuadCurve(to: CGPoint(x:83,y:93), control: CGPoint(x:75 ,y:121))
+                }.stroke(lineWidth: 2.5)
+                Path{(path)in
+                    path.move(to: CGPoint(x: 71, y: 103))
+                    path.addQuadCurve(to: CGPoint(x:81,y:98), control: CGPoint(x:75 ,y:97))
+                    path.addQuadCurve(to:  CGPoint(x: 75, y:106), control: CGPoint(x:78 ,y:105))
+                    path.closeSubpath()
+                }.fill(Color(red: 239/255, green: 153/255, blue: 154/255))
+                Path{(path)in
+                    path.move(to: CGPoint(x: 71, y: 103))
+                    path.addQuadCurve(to: CGPoint(x:81,y:98), control: CGPoint(x:75 ,y:97))
+                }.stroke(lineWidth: 2)
+            }
+            Group { //lip
+                Path{(path)in
+                    path.move(to: CGPoint(x: 59, y: 89))
+                    path.addQuadCurve(to: CGPoint(x:75,y:89), control: CGPoint(x:67 ,y:99))
+                    path.addQuadCurve(to: CGPoint(x:91,y:89), control: CGPoint(x:84 ,y:99))
+                    path.closeSubpath()
+                }.fill(Color(red: 171/255, green: 206/255, blue: 237/255))
+                Path{(path)in
+                    path.move(to: CGPoint(x: 59, y: 89))
+                    path.addQuadCurve(to: CGPoint(x:75,y:89), control: CGPoint(x:67 ,y:99))
+                    path.addQuadCurve(to: CGPoint(x:91,y:89), control: CGPoint(x:84 ,y:99))
+                }.stroke(lineWidth: 2.5)
+            }
+            
         }
     }
 }
 struct catbug_hand_A:View {
     var body: some View {
-        ZStack{
             Path{(path)in
                 path.move(to: CGPoint(x: 31, y: 149))
                 path.addQuadCurve(to: CGPoint(x:28,y:171), control: CGPoint(x:-25 ,y:125))
@@ -134,12 +108,10 @@ struct catbug_hand_A:View {
                 path.move(to: CGPoint(x: 31, y: 149))
                 path.addQuadCurve(to: CGPoint(x:28,y:171), control: CGPoint(x:-25 ,y:125))
             }.stroke(lineWidth: 2.5)
-        }
     }
 }
 struct catbug_hand_B:View {
     var body: some View {
-        ZStack{
             Path{(path)in
                 path.move(to: CGPoint(x: 132, y: 155))
                 path.addQuadCurve(to: CGPoint(x:158,y:154), control: CGPoint(x:120 ,y:218))
@@ -148,7 +120,6 @@ struct catbug_hand_B:View {
                 path.move(to: CGPoint(x: 132, y: 155))
                 path.addQuadCurve(to: CGPoint(x:158,y:154), control: CGPoint(x:120 ,y:218))
             }.stroke(lineWidth: 2.5)
-        }
     }
 }
 struct catbug_leg:View {
@@ -307,5 +278,72 @@ struct Leaf_DarkGreen_View: View {
         Leaf()
             .fill(Color(red: 100/255, green: 155/255, blue: 100/255))
             .frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+    }
+}
+
+struct bowl_View: View {
+    var body: some View {
+        Path{(path)in
+            path.move(to: CGPoint(x: 0, y: 40))
+            path.addQuadCurve(to: CGPoint(x:100,y:40), control: CGPoint(x:50 ,y:15))
+            path.addQuadCurve(to: CGPoint(x:0,y:40), control: CGPoint(x:50 ,y:58))
+        }.fill(Color(red: 185/255, green: 100/255, blue: 55/255))
+        .position(x: 275, y: 500)
+        .offset(x: -95, y: 130)
+        Path{(path)in
+            path.move(to: CGPoint(x: 0, y: 40))
+            path.addQuadCurve(to: CGPoint(x:100,y:40), control: CGPoint(x:50 ,y:15))
+            path.addQuadCurve(to: CGPoint(x:0,y:40), control: CGPoint(x:50 ,y:58))
+        }.stroke(lineWidth: 1.5)
+        .position(x: 275, y: 500)
+        .offset(x: -95, y: 130)
+        Group { //grass
+            Leaf_Green_View()
+                .offset(x: 0.0, y: 0.5)
+                .rotationEffect(.degrees(152))
+            Leaf_DarkGreen_View()
+                .offset(x: 5.0, y: /*@START_MENU_TOKEN@*/10.0/*@END_MENU_TOKEN@*/)
+                .rotationEffect(.degrees(-90))
+           
+            Leaf_DarkGreen_View()
+                .offset(x: 12.0, y: 12.0)
+                .rotationEffect(.degrees(-79))
+            Leaf_DarkGreen_View()
+                .offset(x: 26.0, y: 5.0)
+                .rotationEffect(.degrees(9))
+            Leaf_Green_View()
+                .offset(x: 33.0, y: 5.0)
+                .rotationEffect(.degrees(-33))
+            Leaf_DarkGreen_View()
+                .offset(x: 10.0, y:30.0)
+                .rotationEffect(.degrees(120))
+            Leaf_Green_View()
+                .offset(x: 20.0, y: /*@START_MENU_TOKEN@*/10.0/*@END_MENU_TOKEN@*/)
+                .rotationEffect(.degrees(10))
+            Leaf_Green_View()
+                .offset(x: -5.0, y: 20.0)
+                .rotationEffect(.degrees(-40))
+            Leaf_Green_View()
+                .offset(x: -20.0, y: 5.0)
+                .rotationEffect(.degrees(-22))
+            Leaf_DarkGreen_View()
+                .offset(x: -10.0, y:-55.0)
+                .rotationEffect(.degrees(-90))
+        }.offset(x: -70, y: 115)
+        .rotationEffect(.degrees(10))
+        Path{(path)in
+            path.move(to: CGPoint(x: 0, y: 40))
+            path.addQuadCurve(to: CGPoint(x:100,y:40), control: CGPoint(x:50 ,y:58))
+            path.addArc(center: CGPoint(x: 50, y: 40), radius: 50, startAngle: .degrees(0), endAngle: .degrees(180), clockwise: false)
+        }.fill(Color(red: 230/255, green: 100/255, blue: 55/255))
+        .position(x: 275, y: 500)
+        .offset(x: -95, y: 130)
+        Path{(path)in
+            path.move(to: CGPoint(x: 0, y: 40))
+            path.addQuadCurve(to: CGPoint(x:100,y:40), control: CGPoint(x:50 ,y:58))
+            path.addArc(center: CGPoint(x: 50, y: 40), radius: 50, startAngle: .degrees(0), endAngle: .degrees(180), clockwise: false)
+        }.stroke(lineWidth: 1.5)
+        .position(x: 275, y: 500)
+        .offset(x: -95, y: 130)
     }
 }
