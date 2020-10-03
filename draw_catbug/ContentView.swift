@@ -25,14 +25,12 @@ struct ContentView_Previews: PreviewProvider {
 struct CatBug: View {
     var body: some View {
         ZStack {
-            catbug_ear_A()
             catbug_hand_A()
             catbug_leg()
             catbug_body()
             catbug_hand_B()
-            catbug_ear_B()
             catbug_face()
-            catbug_back()
+            catbug_back_dot()
         }
     }
 }
@@ -55,40 +53,47 @@ struct catbug_face:View {
                 .stroke(lineWidth: 2.5)
                 .frame(width: 10, height: 16, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .position(x: 115, y: 85)
+            //mouth
+            Path{(path)in
+                path.move(to: CGPoint(x: 67, y: 93))
+                path.addQuadCurve(to: CGPoint(x:83,y:93), control: CGPoint(x:75 ,y:121))
+                path.addLine(to:  CGPoint(x: 75, y: 89))
+                path.closeSubpath()
+            }.fill(Color(red: 170/255, green: 65/255, blue: 69/255))
+            Path{(path)in
+                path.move(to: CGPoint(x: 67, y: 93))
+                path.addQuadCurve(to: CGPoint(x:83,y:93), control: CGPoint(x:75 ,y:121))
+            }.stroke(lineWidth: 2.5)
+            Path{(path)in
+                path.move(to: CGPoint(x: 71, y: 103))
+                path.addQuadCurve(to: CGPoint(x:81,y:98), control: CGPoint(x:75 ,y:97))
+                path.addQuadCurve(to:  CGPoint(x: 75, y:106), control: CGPoint(x:78 ,y:105))
+                path.closeSubpath()
+            }.fill(Color(red: 239/255, green: 153/255, blue: 154/255))
+            Path{(path)in
+                path.move(to: CGPoint(x: 71, y: 103))
+                path.addQuadCurve(to: CGPoint(x:81,y:98), control: CGPoint(x:75 ,y:97))
+            }.stroke(lineWidth: 2)
+            //lip
             Path{(path)in
                 path.move(to: CGPoint(x: 59, y: 89))
-                path.addQuadCurve(to: CGPoint(x:75,y:89), control: CGPoint(x:68 ,y:99))
+                path.addQuadCurve(to: CGPoint(x:75,y:89), control: CGPoint(x:67 ,y:99))
                 path.addQuadCurve(to: CGPoint(x:91,y:89), control: CGPoint(x:84 ,y:99))
+                path.closeSubpath()
+            }.fill(Color(red: 171/255, green: 206/255, blue: 237/255))
+            Path{(path)in
+                path.move(to: CGPoint(x: 59, y: 89))
+                path.addQuadCurve(to: CGPoint(x:75,y:89), control: CGPoint(x:67 ,y:99))
+                path.addQuadCurve(to: CGPoint(x:91,y:89), control: CGPoint(x:84 ,y:99))
+                
             }.stroke(lineWidth: 2.5)
-            
         }
     }
 }
 struct catbug_ear_A:View {
     var body: some View {
         ZStack{
-            Path{(path)in
-                path.move(to: CGPoint(x: 24, y: 57))
-                path.addQuadCurve(to: CGPoint(x:53,y:38), control: CGPoint(x:30 ,y:-10))
-            }.fill(Color(red: 183/255, green: 223/255, blue: 250/255))
-            Path{(path)in
-                path.move(to: CGPoint(x: 24, y: 57))
-                path.addQuadCurve(to: CGPoint(x:53,y:38), control: CGPoint(x:30 ,y:-10))
-            }.stroke(lineWidth: 2.5)
-        }
-    }
-}
-struct catbug_ear_B:View {
-    var body: some View {
-        ZStack{
-            Path{(path)in
-                path.move(to: CGPoint(x: 112, y: 41))
-                path.addQuadCurve(to: CGPoint(x:146,y:55), control: CGPoint(x:144 ,y:-20))
-            }.fill(Color(red: 183/255, green: 223/255, blue: 250/255))
-            Path{(path)in
-                path.move(to: CGPoint(x: 112, y: 41))
-                path.addQuadCurve(to: CGPoint(x:146,y:55), control: CGPoint(x:144 ,y:-20))
-            }.stroke(lineWidth: 2.5)
+           
         }
     }
 }
@@ -98,7 +103,7 @@ struct catbug_hand_A:View {
             Path{(path)in
                 path.move(to: CGPoint(x: 31, y: 149))
                 path.addQuadCurve(to: CGPoint(x:28,y:171), control: CGPoint(x:-25 ,y:125))
-            }.fill(Color(red: 183/255, green: 223/255, blue: 250/255))
+            }.fill(Color(red: 171/255, green: 206/255, blue: 237/255))
             Path{(path)in
                 path.move(to: CGPoint(x: 31, y: 149))
                 path.addQuadCurve(to: CGPoint(x:28,y:171), control: CGPoint(x:-25 ,y:125))
@@ -112,7 +117,7 @@ struct catbug_hand_B:View {
             Path{(path)in
                 path.move(to: CGPoint(x: 132, y: 155))
                 path.addQuadCurve(to: CGPoint(x:158,y:154), control: CGPoint(x:120 ,y:218))
-            }.fill(Color(red: 183/255, green: 223/255, blue: 250/255))
+            }.fill(Color(red: 171/255, green: 206/255, blue: 237/255))
             Path{(path)in
                 path.move(to: CGPoint(x: 132, y: 155))
                 path.addQuadCurve(to: CGPoint(x:158,y:154), control: CGPoint(x:120 ,y:218))
@@ -126,7 +131,7 @@ struct catbug_leg:View {
             Path{(path)in
                 path.move(to: CGPoint(x: 58, y: 263))
                 path.addQuadCurve(to: CGPoint(x:80,y:262), control: CGPoint(x:68 ,y:318))
-            }.fill(Color(red: 183/255, green: 223/255, blue: 250/255))
+            }.fill(Color(red: 171/255, green: 206/255, blue: 237/255))
             Path{(path)in
                 path.move(to: CGPoint(x: 58, y: 263))
                 path.addQuadCurve(to: CGPoint(x:80,y:262), control: CGPoint(x:68 ,y:318))
@@ -134,7 +139,7 @@ struct catbug_leg:View {
             Path{(path)in
                 path.move(to: CGPoint(x: 116, y: 263))
                 path.addQuadCurve(to: CGPoint(x:140,y:262), control: CGPoint(x:127 ,y:335))
-            }.fill(Color(red: 183/255, green: 223/255, blue: 250/255))
+            }.fill(Color(red: 171/255, green: 206/255, blue: 237/255))
             Path{(path)in
                 path.move(to: CGPoint(x: 116, y: 263))
                 path.addQuadCurve(to: CGPoint(x:140,y:262), control: CGPoint(x:127 ,y:335))
@@ -145,6 +150,16 @@ struct catbug_leg:View {
 struct catbug_body:View {
     var body: some View {
         ZStack{
+            //ear_right
+            Path{(path)in
+                path.move(to: CGPoint(x: 24, y: 57))
+                path.addQuadCurve(to: CGPoint(x:53,y:38), control: CGPoint(x:30 ,y:-10))
+            }.fill(Color(red: 171/255, green: 206/255, blue: 237/255))
+            Path{(path)in
+                path.move(to: CGPoint(x: 24, y: 57))
+                path.addQuadCurve(to: CGPoint(x:53,y:38), control: CGPoint(x:30 ,y:-10))
+            }.stroke(lineWidth: 2.5)
+            //body
             Path{(path)in
                 path.move(to: CGPoint(x: 33, y: 146))
                 path.addQuadCurve(to: CGPoint(x:7,y:93), control: CGPoint(x:5 ,y:125))
@@ -154,7 +169,7 @@ struct catbug_body:View {
                 path.addQuadCurve(to: CGPoint(x:167,y:265), control: CGPoint(x:135 ,y:221))
                 path.addQuadCurve(to: CGPoint(x:60,y:266), control: CGPoint(x:111 ,y:295))
                 path.addQuadCurve(to: CGPoint(x:33,y:146), control: CGPoint(x:1 ,y:226))
-            }.fill(Color(red: 183/255, green: 223/255, blue: 250/255))
+            }.fill(Color(red: 171/255, green: 206/255, blue: 237/255))
             Path{(path)in
                 path.move(to: CGPoint(x: 33, y: 146))
                 path.addQuadCurve(to: CGPoint(x:7,y:93), control: CGPoint(x:5 ,y:125))
@@ -165,6 +180,16 @@ struct catbug_body:View {
                 path.addQuadCurve(to: CGPoint(x:60,y:266), control: CGPoint(x:111 ,y:295))
                 path.addQuadCurve(to: CGPoint(x:33,y:146), control: CGPoint(x:1 ,y:226))
             }.stroke(lineWidth: 2.5)
+            //ear_left
+            Path{(path)in
+                path.move(to: CGPoint(x: 112, y: 41))
+                path.addQuadCurve(to: CGPoint(x:146,y:55), control: CGPoint(x:144 ,y:-20))
+            }.fill(Color(red: 171/255, green: 206/255, blue: 237/255))
+            Path{(path)in
+                path.move(to: CGPoint(x: 112, y: 41))
+                path.addQuadCurve(to: CGPoint(x:146,y:55), control: CGPoint(x:144 ,y:-20))
+            }.stroke(lineWidth: 2.5)
+            //back
             Path{(path)in
                 path.move(to: CGPoint(x:171,y:103))
                 path.addQuadCurve(to: CGPoint(x:161,y:165), control: CGPoint(x:175 ,y:135))
@@ -184,7 +209,7 @@ struct catbug_body:View {
         }
     }
 }
-struct catbug_back:View {
+struct catbug_back_dot:View {
     var body: some View {
         ZStack{
             Path{(path)in
