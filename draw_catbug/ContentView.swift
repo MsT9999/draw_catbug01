@@ -165,12 +165,6 @@ struct catbug_body:View {
                 path.addQuadCurve(to: CGPoint(x:60,y:266), control: CGPoint(x:111 ,y:295))
                 path.addQuadCurve(to: CGPoint(x:33,y:146), control: CGPoint(x:1 ,y:226))
             }.stroke(lineWidth: 2.5)
-        }
-    }
-}
-struct catbug_back:View {
-    var body: some View {
-        ZStack{
             Path{(path)in
                 path.move(to: CGPoint(x:171,y:103))
                 path.addQuadCurve(to: CGPoint(x:161,y:165), control: CGPoint(x:175 ,y:135))
@@ -187,6 +181,37 @@ struct catbug_back:View {
                 startAngle: .degrees(70), endAngle: .degrees(290), clockwise: true)
                 path.closeSubpath()
             }.stroke(lineWidth: 2.5)
+        }
+    }
+}
+struct catbug_back:View {
+    var body: some View {
+        ZStack{
+            Path{(path)in
+                path.move(to: CGPoint(x:173,y:114))
+                path.addQuadCurve(to: CGPoint(x:200,y:123), control: CGPoint(x:189 ,y:105))
+                path.addQuadCurve(to: CGPoint(x:181,y:167), control: CGPoint(x:208 ,y:148))
+                path.addQuadCurve(to: CGPoint(x:161,y:167), control: CGPoint(x:171 ,y:172))
+                path.addQuadCurve(to: CGPoint(x:173,y:114), control: CGPoint(x:168 ,y:158))
+            }.fill(Color(red: 43/255, green: 50/255, blue: 108/255))
+            Path{(path)in
+                path.move(to: CGPoint(x:215,y:120))
+                path.addQuadCurve(to: CGPoint(x:230,y:175), control: CGPoint(x:208 ,y:150))
+                path.addQuadCurve(to: CGPoint(x:215,y:120), control: CGPoint(x:232 ,y:150))
+            }.fill(Color(red: 43/255, green: 50/255, blue: 108/255))
+            Path{(path)in
+                path.move(to: CGPoint(x:173,y:114))
+                path.addQuadCurve(to: CGPoint(x:200,y:123), control: CGPoint(x:189 ,y:105))
+                path.addQuadCurve(to: CGPoint(x:181,y:167), control: CGPoint(x:208 ,y:148))
+                path.addQuadCurve(to: CGPoint(x:161,y:167), control: CGPoint(x:171 ,y:172))
+                path.addQuadCurve(to: CGPoint(x:173,y:114), control: CGPoint(x:168 ,y:158))
+            }.stroke(lineWidth: 2.5)
+            Path{(path)in
+                path.move(to: CGPoint(x:215,y:120))
+                path.addQuadCurve(to: CGPoint(x:230,y:175), control: CGPoint(x:208 ,y:150))
+                path.addQuadCurve(to: CGPoint(x:215,y:120), control: CGPoint(x:232 ,y:150))
+            }.stroke(lineWidth: 2.5)
+            
         }
     }
 }
