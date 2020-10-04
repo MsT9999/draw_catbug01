@@ -228,22 +228,21 @@ struct catbug_body:View {
 struct catbug_back_dot:View {
     var body: some View {
         ZStack{
-                Path{(path)in
-                    path.move(to: CGPoint(x:173,y:114))
-                    path.addQuadCurve(to: CGPoint(x:200,y:123), control: CGPoint(x:189 ,y:105))
-                    path.addQuadCurve(to: CGPoint(x:181,y:167), control: CGPoint(x:208 ,y:148))
-                    path.addQuadCurve(to: CGPoint(x:161,y:167), control: CGPoint(x:171 ,y:172))
-                    path.addQuadCurve(to: CGPoint(x:173,y:114), control: CGPoint(x:168 ,y:158))
-                }//.fill(Color(red: 43/255, green: 50/255, blue: 108/255))
-                Path{(path)in
-                    path.move(to: CGPoint(x:215,y:120))
-                    path.addQuadCurve(to: CGPoint(x:230,y:175), control: CGPoint(x:208 ,y:150))
-                    path.addQuadCurve(to: CGPoint(x:215,y:120), control: CGPoint(x:232 ,y:150))
-                }//.fill(Color(red: 43/255, green: 50/255, blue: 108/255))
-            
+            Path{(path)in
+                path.move(to: CGPoint(x:173,y:114))
+                path.addQuadCurve(to: CGPoint(x:200,y:123), control: CGPoint(x:189 ,y:105))
+                path.addQuadCurve(to: CGPoint(x:181,y:167), control: CGPoint(x:208 ,y:148))
+                path.addQuadCurve(to: CGPoint(x:161,y:167), control: CGPoint(x:171 ,y:172))
+                path.addQuadCurve(to: CGPoint(x:173,y:114), control: CGPoint(x:168 ,y:158))
+            }.fill(Color(red: 43/255, green: 50/255, blue: 108/255))
+            Path{(path)in
+                path.move(to: CGPoint(x:215,y:120))
+                path.addQuadCurve(to: CGPoint(x:230,y:175), control: CGPoint(x:208 ,y:150))
+                path.addQuadCurve(to: CGPoint(x:215,y:120), control: CGPoint(x:232 ,y:150))
+            }.fill(Color(red: 43/255, green: 50/255, blue: 108/255))
             Group {
                 Ellipse()
-                    //.fill(Color(red: 43/255, green: 50/255, blue: 108/255))
+                    .fill(Color(red: 43/255, green: 50/255, blue: 108/255))
                     .frame(width: 35, height: 56)
                     .offset(x: 15, y:-65)
                     .rotationEffect(.degrees(15))
@@ -350,7 +349,7 @@ struct bowl_View: View {
                 path.move(to: CGPoint(x: 0, y: 40))
                 path.addQuadCurve(to: CGPoint(x:100,y:40), control: CGPoint(x:50 ,y:58))
                 path.addArc(center: CGPoint(x: 50, y: 40), radius: 50, startAngle: .degrees(0), endAngle: .degrees(180), clockwise: false)
-            }.fill(Color.yellow)
+            }.fill(Color(red: 230/255, green: 100/255, blue: 55/255))
             .offset(x: 20, y: 355)
             Path{(path)in
                 path.move(to: CGPoint(x: 0, y: 40))
