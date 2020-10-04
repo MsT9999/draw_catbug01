@@ -287,7 +287,7 @@ struct bowl_View: View {
                 path.move(to: CGPoint(x: 0, y: 40))
                 path.addQuadCurve(to: CGPoint(x:100,y:40), control: CGPoint(x:50 ,y:15))
                 path.addQuadCurve(to: CGPoint(x:0,y:40), control: CGPoint(x:50 ,y:58))
-            }.stroke(lineWidth: 1.5)
+            }.stroke(Color.black, style: StrokeStyle(lineWidth: 2, lineCap: .round))
             .offset(x: 20, y: 355)
             Group { //grass
                 Leaf_Green_View()
@@ -333,7 +333,7 @@ struct bowl_View: View {
                 path.move(to: CGPoint(x: 0, y: 40))
                 path.addQuadCurve(to: CGPoint(x:100,y:40), control: CGPoint(x:50 ,y:58))
                 path.addArc(center: CGPoint(x: 50, y: 40), radius: 50, startAngle: .degrees(0), endAngle: .degrees(180), clockwise: false)
-            }.stroke(lineWidth: 1.5)
+            }.stroke(Color.black, style: StrokeStyle(lineWidth: 2, lineCap: .round))
             .offset(x: 20, y: 355)
         }
     }
